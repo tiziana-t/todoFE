@@ -12,7 +12,7 @@ export class TodoService {
   constructor(private http : HttpClient) { }
 
   public getMemo() : Observable<Todo[]>{
-    const url = environment.baseUrl + '/getAll';
-    return this.http.get<Todo[]>(url)
+    const url = environment.baseUrl + '/getAll/';
+    return this.http.get<Todo[]>(url);
   }
 }

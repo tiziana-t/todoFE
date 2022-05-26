@@ -1,1 +1,14 @@
-<p>{{listaMemo}}</p>
+<p>
+    {{memo?.text}}
+
+    {{memo?.state}}
+
+    {{memo?.createdAt}}
+
+    {{memo?.dueTo}}
+    
+    <app-common-selector [text] = " 'modifica' " (selection) = todoSelectionHandler ></app-common-selector>
+
+    <app-common-selector [text] = " 'elimina' " (selection) = todoSelectionHandler ></app-common-selector>
+    
+</p>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Todo } from 'src/app/shared/models/todo-model';
 
 @Component({
@@ -8,11 +8,17 @@ import { Todo } from 'src/app/shared/models/todo-model';
 })
 export class FullListSingleItemComponent implements OnInit {
 
-  @Input() listaMemo? : Todo[]
+  @Input() memo? : Todo;
+  @Output() selectDetail: EventEmitter<Todo> = new EventEmitter()
   
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.memo)
   }
 
+  todoSelectionHandler(): void {
+    this.selectDetail.emit(this.memo);
+
+  }
 }

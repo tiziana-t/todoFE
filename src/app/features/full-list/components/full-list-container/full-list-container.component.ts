@@ -37,6 +37,11 @@ export class FullListContainerComponent implements OnInit {
     )
     return this.listaMemo
     }
+
+  selectDetailHandler(memo: Todo): void {
+    const url = `getAll/${memo.id}`;
+    //TODO chiamare il servizio di modifica
+  }
     
 
   memos = this.showList()

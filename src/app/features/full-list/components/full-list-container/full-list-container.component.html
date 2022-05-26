@@ -1,6 +1,7 @@
 <p>full-list-container works!</p>
-<div >
-<app-full-list-single-item>
-    [listaMemo] = "memos"
+<div *ngFor = "let singlememo of memos">
+<app-full-list-single-item
+[memo] = "singlememo"
+(selectDetail) = "selectDetailHandler($event)" >    
 </app-full-list-single-item>
 </div>
