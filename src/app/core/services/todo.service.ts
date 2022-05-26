@@ -20,4 +20,17 @@ export class TodoService {
   public createMemo(todoPartial : TodoPartial) : Observable<number> {
     const url = environment.baseUrl + '/creaNuovo';
     return this.http.post<number>(url, todoPartial)
-}}
+  }
+
+  public deleteMemo(id: number) {
+    const url = environment.baseUrl + '/getAll/' + id;
+    return this.http.delete<number>(url)
+  }
+
+  /*
+  public updateMemo(id: number, todoPartial :TodoPartial) : Observable<Todo> {
+    const url = environment.baseUrl + '/getAll/' + 'id';
+    return this.http.put<Todo>(url)
+  }
+  */
+}

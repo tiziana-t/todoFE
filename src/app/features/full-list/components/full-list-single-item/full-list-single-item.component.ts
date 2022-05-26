@@ -9,16 +9,15 @@ import { Todo } from 'src/app/shared/models/todo-model';
 export class FullListSingleItemComponent implements OnInit {
 
   @Input() memo? : Todo;
-  @Output() selectDetail: EventEmitter<Todo> = new EventEmitter()
+  @Output() eliminaSelectDetail: EventEmitter<Todo> = new EventEmitter()
   
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.memo)
   }
 
-  todoSelectionHandler(): void {
-    this.selectDetail.emit(this.memo);
+  eliminaSelectionHandler(): void {
+    this.eliminaSelectDetail.emit(this.memo);
 
   }
 }

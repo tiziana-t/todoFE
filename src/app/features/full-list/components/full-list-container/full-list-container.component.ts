@@ -24,9 +24,9 @@ export class FullListContainerComponent implements OnInit {
   showList() : Todo[] {
     this.todoService.getMemo().subscribe(
       result => {
-        console.log(result)
         if (result) {
           result.forEach(element => { this.listaMemo.push(element)});
+          console.log(result)
           }
             
          else console.log('errore')
@@ -37,13 +37,24 @@ export class FullListContainerComponent implements OnInit {
     )
     return this.listaMemo
     }
+  
+  memos = this.showList()
 
-  selectDetailHandler(memo: Todo): void {
-    const url = `getAll/${memo.id}`;
-    //TODO chiamare il servizio di modifica
+  eliminaSelectDetailHandler(memo: Todo): void {
+    const url = `/getAll`
+    console.log(memo.id)
+    this.todoService.deleteMemo(memo.id).subscribe(
+      result => {
+        console.log("record eliminato")
+      },
+      error => {
+        console.log(error)
+      }
+    )
+
   }
     
 
-  memos = this.showList()
+  
 
 }
