@@ -27,10 +27,10 @@ export class TodoService {
     return this.http.delete<number>(url)
   }
 
-  /*
+  
   public updateMemo(id: number, todoPartial :TodoPartial) : Observable<Todo> {
     const url = environment.baseUrl + '/getAll/' + 'id';
-    return this.http.put<Todo>(url)
+    return this.http.put<Todo>(url, todoPartial)
   }
-  */
+  
 }

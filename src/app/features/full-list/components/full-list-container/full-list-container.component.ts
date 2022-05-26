@@ -50,11 +50,21 @@ export class FullListContainerComponent implements OnInit {
       error => {
         console.log(error)
       }
-    )
+  )}
 
+  modificaSelectDetailHandler(memo: Todo): void {
+    const url = `/modifica`
+    this.router.navigateByUrl(url);
+    console.log(memo.id)
   }
-    
-
+    /*
+    this.todoService.updateMemo(memo.id).subscribe(
+      result => {
+        console.log("record eliminato")
+      },
+      error => {
+        console.log(error)
+      }
+    */
   
-
-}
+  }

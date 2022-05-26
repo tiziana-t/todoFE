@@ -20,4 +20,12 @@ export class FullListSingleItemComponent implements OnInit {
     this.eliminaSelectDetail.emit(this.memo);
 
   }
+
+  /*
+  modificaSelectionHandler(): void {
+    this.modificaSelectDetail.emit(this.memo);
+  }
+  */
+
+  
 }
