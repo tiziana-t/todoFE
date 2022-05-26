@@ -10,6 +10,7 @@ export class FullListSingleItemComponent implements OnInit {
 
   @Input() memo? : Todo;
   @Output() eliminaSelectDetail: EventEmitter<Todo> = new EventEmitter()
+  @Output() modificaSelectDetail: EventEmitter<Todo> = new EventEmitter()
   
   constructor() { }
 
@@ -21,11 +22,11 @@ export class FullListSingleItemComponent implements OnInit {
 
   }
 
-  /*
+  
   modificaSelectionHandler(): void {
     this.modificaSelectDetail.emit(this.memo);
   }
-  */
+ 
 
   
 }

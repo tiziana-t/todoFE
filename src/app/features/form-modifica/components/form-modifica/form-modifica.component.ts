@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TodoService } from 'src/app/core/services/todo.service';
 import { Todo } from 'src/app/shared/models/todo-model';
 import { TodoPartial } from 'src/app/shared/models/todo-partial-model';
 
@@ -11,11 +13,22 @@ import { TodoPartial } from 'src/app/shared/models/todo-partial-model';
 export class FormModificaComponent implements OnInit {
 
   updatedTodo? : Todo;
+  id : number = 0;
 
-  constructor() { }
+  constructor(
+    private todoService : TodoService,
+    private route : ActivatedRoute,
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(
+      p => {
+        this.id = p['id_to_change'];
+      }
+    );
   }
+
   completeTodoForm(updatedTodoForm: NgForm){
     
     const todoPartial: TodoPartial = {
@@ -24,6 +37,19 @@ export class FormModificaComponent implements OnInit {
       createdAt: updatedTodoForm.value.campoCreatedAt,
       dueTo: updatedTodoForm.value.campoDueTo
     }
+    
+    this.todoService.updateMemo(this.id, todoPartial).subscribe(
+      result => {
+        console.log(result)
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
-
+  
 }
+
+
+
+

@@ -4,7 +4,7 @@ import { Route, RouterModule, Routes } from '@angular/router';
 import { FormModificaComponent } from './components/form-modifica/form-modifica.component';
 
 const routes : Routes = [
-  {path: '', component: FormModificaComponent}
+  {path: ':id_to_change', component: FormModificaComponent}
 ]
 
 @NgModule({
