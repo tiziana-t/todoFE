@@ -1,0 +1,23 @@
+<form #newTodoForm ="ngForm" (submit) = "completeTodoForm(newTodoForm)">
+    <div>
+        <label> Aggiungi testo: </label> 
+    <input type = "text" name = "campoTesto" #refTesto = "ngModel" [ngModel] = "newTodo?.text" required />
+    </div>
+    <div>
+        <label> creato il: </label> 
+    <input type = "text" name = "campoCreatoIl" #refCreatoIl = "ngModel" [ngModel] = "newTodo?.state" required />
+    </div>
+    <div>
+        <label> da fare entro: </label> 
+    <input type = "text" name = "campoDueTo" #refDueTo = "ngModel" [ngModel] = "newTodo?.createdAt" required />
+    </div>
+    <div>
+        <label> stato: </label>
+    <input type = "text" name = "campoStato" #refStato = "ngModel" [ngModel] = "newTodo?.dueTo" required />
+    </div>
+
+    <div>
+        <input type="submit" value="SAVE">
+    </div>
+
+</form>

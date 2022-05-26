@@ -4,8 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { CommonSelectorComponent } from './shared/components/common-selector/common-selector.component';
+
 
 @NgModule({
   declarations: [
@@ -14,8 +13,7 @@ import { CommonSelectorComponent } from './shared/components/common-selector/com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    CoreModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
