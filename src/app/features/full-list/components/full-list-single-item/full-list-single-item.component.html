@@ -1,15 +1,17 @@
-<p>
-    {{memo?.text}}
+<p style="display: flex; font-family: Arial, Helvetica, sans-serif;">
+    
+    <span style="width:200px; display:inline-block;"> {{memo?.text}}</span>
+    
+    
+    <span style="width:150px; display:inline-block;"> stato: {{memo?.state}}</span>
 
-    {{memo?.state}}
+    <span style="width: 200px; display:inline-block;">creato il: {{memo?.createdAt}}</span>
 
-    {{memo?.createdAt}}
-
-    {{memo?.dueTo}}
+    <span style="width:200px; display:inline-block;">da fare entro: {{memo?.dueTo}}</span>
     
     <!--<app-common-selector [text] = " 'modifica' " (selection) = todoSelectionHandler ></app-common-selector>-->
 
-    <app-common-selector [text] = " 'elimina' " (selection) = "eliminaSelectionHandler()" ></app-common-selector>
-    <app-common-selector [text] = " 'modifica' " (selection) = "modificaSelectionHandler()" ></app-common-selector> 
+    <span style="width: 70px; display:inline-block;"><app-common-selector [text] = " 'elimina' " (selection) = "eliminaSelectionHandler()" ></app-common-selector></span>
+    <span style="width:70px; display:inline-block;"><app-common-selector [text] = " 'modifica' " (selection) = "modificaSelectionHandler()" ></app-common-selector> </span>
     
 </p>

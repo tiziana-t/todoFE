@@ -1,12 +1,38 @@
-<p>
+<style>
+    button {
+        width: 200px;
+        height: 50px;
+        background-color: bisque;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    .contenitore{
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        height: 100vh;
+    }
+</style>
+
+<div class="contenitore">
     <button (click) = "onClick('creaNuovo')"> Crea nuovo memo </button>
-</p>
 
-<p>
+
+
     <button (click) = "onClick('getAll')"> Vedi tutti i memo </button>
-</p>
 
-<p>
+
+
     <button (click) = "onClick('cercaMemo')"> Cerca memo </button>
-</p>
 
+</div>
