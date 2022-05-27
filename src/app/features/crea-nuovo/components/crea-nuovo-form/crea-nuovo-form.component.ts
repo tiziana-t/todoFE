@@ -36,7 +36,7 @@ export class CreaNuovoFormComponent implements OnInit {
       text: newTodoForm.value.campoTesto,
       state: newTodoForm.value.campoStato,
       createdAt: newTodoForm.value.campoCreatoIl,
-      dueTo: newTodoForm.value.campoDueTo
+      dueTo: newTodoForm.value.campoDueTo //da implementare il fatto che se questo campo è null gli viene associato un valore di default configurabile
     }
 
     this.todoService.createMemo(todoPartial).subscribe(
