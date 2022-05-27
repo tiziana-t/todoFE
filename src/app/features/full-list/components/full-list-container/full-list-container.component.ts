@@ -41,7 +41,6 @@ export class FullListContainerComponent implements OnInit {
   memos = this.showList()
 
   eliminaSelectDetailHandler(memo: Todo): void {
-    const url = `/getAll`
     console.log(memo.id)
     this.todoService.deleteMemo(memo.id).subscribe(
       result => {

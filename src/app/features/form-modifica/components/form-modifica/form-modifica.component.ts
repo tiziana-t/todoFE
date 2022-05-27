@@ -41,6 +41,9 @@ export class FormModificaComponent implements OnInit {
     this.todoService.updateMemo(this.id, todoPartial).subscribe(
       result => {
         console.log(result)
+        const url = `/getAll`
+        this.router.navigateByUrl(url);
+
       },
       error => {
         console.log(error)

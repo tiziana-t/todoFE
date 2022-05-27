@@ -24,12 +24,13 @@ export class TodoService {
 
   public deleteMemo(id: number) {
     const url = environment.baseUrl + '/getAll/' + id;
+    console.log(url)
     return this.http.delete<number>(url)
   }
 
   
   public updateMemo(id: number, todoPartial :TodoPartial) : Observable<Todo> {
-    const url = environment.baseUrl + '/getAll/' + 'id';
+    const url = environment.baseUrl + '/modifica/' + id;
     return this.http.put<Todo>(url, todoPartial)
   }
   
