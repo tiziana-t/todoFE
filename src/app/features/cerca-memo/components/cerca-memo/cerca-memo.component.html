@@ -1,0 +1,9 @@
+<form #keywordInsertion ="ngForm" (submit) = "inserimentoKeyword(keywordInsertion)">
+    <div>
+        <label>Inserisci parola chiave per la ricerca </label> 
+        <input type = "text" name = "campoTesto" #refTesto = "ngModel" [ngModel] = "keyword" required />
+    <div>
+    <div>
+        <input type="submit" value="SAVE">
+    </div>
+

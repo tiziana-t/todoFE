@@ -17,6 +17,12 @@ export class TodoService {
     return this.http.get<Todo[]>(url);
   }
 
+  public getByKeyword(keyword: string) : Observable<Todo[]> {
+    const url = environment.baseUrl + '/memoTrovati/' + keyword;
+    console.log(url)
+    return this.http.get<Todo[]>(url);
+  }
+
   public createMemo(todoPartial : TodoPartial) : Observable<number> {
     const url = environment.baseUrl + '/creaNuovo';
     return this.http.post<number>(url, todoPartial)
