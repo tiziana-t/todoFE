@@ -13,7 +13,11 @@
     </div>
     <div>
         <label> stato: </label>
-    <input type = "text" name = "campoStato" #refStato = "ngModel" [ngModel] = "newTodo?.state" required />
+    <select name = "campoStato" #refStato = "ngModel" [ngModel] = "newTodo?.state" required >
+        <option value="TODO">TODO</option>
+        <option value="IN_PROGRESS">IN_PROGRESS</option>
+        <option value="DONE">DONE</option>
+    </select>
     </div>
 
     <div>

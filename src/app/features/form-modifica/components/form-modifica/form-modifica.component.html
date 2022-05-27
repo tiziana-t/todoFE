@@ -6,19 +6,23 @@
     </div>
     <div>
         <label> creato il: </label> 
-    <input type = "text" name = "campoCreatoIl" #refCreatoIl = "ngModel" [ngModel] = "updatedTodo?.state" required />
+    <input type = "date" name = "campoCreatoIl" #refCreatoIl = "ngModel" [ngModel] = "updatedTodo?.state" required />
     </div>
     <div>
         <label> da fare entro: </label> 
-    <input type = "text" name = "campoDueTo" #refDueTo = "ngModel" [ngModel] = "updatedTodo?.createdAt" required />
+    <input type = "date" name = "campoDueTo" #refDueTo = "ngModel" [ngModel] = "updatedTodo?.createdAt" required />
     </div>
     <div>
         <label> stato: </label>
-    <input type = "date" name = "campoStato" #refStato = "ngModel" [ngModel] = "updatedTodo?.dueTo" required />
+        <select name = "campoStato" #refStato = "ngModel" [ngModel] = "updatedTodo?.state" required >
+            <option value="TODO">TODO</option>
+            <option value="IN_PROGRESS">IN_PROGRESS</option>
+            <option value="DONE">DONE</option>
+        </select>
     </div>
 
     <div>
-        <input type="date" value="SAVE">
+        <input type="submit" value="SAVE">
     </div>
 
 </form>
