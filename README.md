@@ -8,6 +8,6 @@ Package Manager: npm 8.5.5
 
 "ng serve" per avviare il programma
 
-commenti dettagliati inseriti al file typescript relativo a ogni componente presente nella cartella src/app/features
+commenti dettagliati inseriti nel file typescript relativo a ogni componente presente nella cartella src/app/features
 
 
