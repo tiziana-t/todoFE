@@ -28,7 +28,7 @@ export class CreaNuovoFormComponent implements OnInit {
     const todoPartial: TodoPartial = {
       text: newTodoForm.value.campoTesto,
       state: newTodoForm.value.campoStato,
-      createdAt: newTodoForm.value.campoCreatedAt,
+      createdAt: newTodoForm.value.campoCreatoIl,
       dueTo: newTodoForm.value.campoDueTo
     }
 
