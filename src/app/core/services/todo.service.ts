@@ -12,6 +12,9 @@ export class TodoService {
 
   constructor(private http : HttpClient) { }
 
+
+  //*************GET*************
+
   public getMemo() : Observable<Todo[]>{
     const url = environment.baseUrl + '/getAll/';
     return this.http.get<Todo[]>(url);
@@ -23,17 +26,25 @@ export class TodoService {
     return this.http.get<Todo[]>(url);
   }
 
+
+  //*************POST*************
+
   public createMemo(todoPartial : TodoPartial) : Observable<number> {
     const url = environment.baseUrl + '/creaNuovo';
     return this.http.post<number>(url, todoPartial)
   }
 
+
+  //*************DELETE*************
+  
   public deleteMemo(id: number) {
     const url = environment.baseUrl + '/getAll/' + id;
     console.log(url)
     return this.http.delete<number>(url)
   }
 
+
+  //*************PUT*************
   
   public updateMemo(id: number, todoPartial :TodoPartial) : Observable<Todo> {
     const url = environment.baseUrl + '/modifica/' + id;

@@ -14,6 +14,14 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  /*
+  cliccando le 3 opzioni offerte dal menù mi sposto sulle diverse viste
+  1) creazione di un nuovo memo
+  2) display di tutti i memo disponibili 
+  3) ricerca di un memo attraverso la parola chiave
+  */
+
 
    onClick = (route : string) => this.router.navigateByUrl(route)
 
