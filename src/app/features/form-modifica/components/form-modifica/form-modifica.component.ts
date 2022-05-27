@@ -10,6 +10,16 @@ import { TodoPartial } from 'src/app/shared/models/todo-partial-model';
   templateUrl: './form-modifica.component.html',
   styleUrls: ['./form-modifica.component.css']
 })
+
+  /*
+  Componente che supporta la vista per la modifica di un elemento della To-Do list 
+  dopo averlo selezionato dalla vista full-list(che mostra tutti gli elementi della lista).
+  Utilizza il servizio di update implementato in core/todo.service.ts per modificare l'elemento.
+  Dopo aver effettuato la modifica questo componente fa sì che si torni alla vista
+  relativa al componente full-list per vedere di nuovo tutti gli elementi tra qui quello aggiornato.
+
+  */
+
 export class FormModificaComponent implements OnInit {
 
   updatedTodo? : Todo;
@@ -21,6 +31,7 @@ export class FormModificaComponent implements OnInit {
     private router : Router
   ) { }
 
+  //l'id mi è passato attraverso l'url nel momento in cui nella vista precedente a questa seleziono uno degli elementi della to-do list
   ngOnInit(): void {
     this.route.params.subscribe(
       p => {
@@ -41,7 +52,7 @@ export class FormModificaComponent implements OnInit {
     this.todoService.updateMemo(this.id, todoPartial).subscribe(
       result => {
         console.log(result)
-        const url = `/getAll`
+        const url = `/getAll` //torno alla vista che mostra tutti gli elementi della to-do list tra cui quello aggiornato
         this.router.navigateByUrl(url);
 
       },

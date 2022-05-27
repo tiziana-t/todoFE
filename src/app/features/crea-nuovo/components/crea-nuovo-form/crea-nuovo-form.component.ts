@@ -10,6 +10,13 @@ import { TodoPartial } from 'src/app/shared/models/todo-partial-model';
   templateUrl: './crea-nuovo-form.component.html',
   styleUrls: ['./crea-nuovo-form.component.css']
 })
+
+  /*
+  Componente che supporta una vista con un form per la creazione di un nuovo elemento della To-Do list.
+  Vista raggiunta dalla vista di Menù.
+  Utilizza un servizio di creazione del record implementato in core/todo.service.ts
+  */
+
 export class CreaNuovoFormComponent implements OnInit {
 
   newTodo? : Todo; 

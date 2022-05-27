@@ -6,6 +6,15 @@ import { Router } from '@angular/router';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
+
+  /*
+  Componente che supporta la prima vista, un menù
+  Cliccando le 3 opzioni offerte dal menù mi sposto sulle diverse viste:
+  1) creazione di un nuovo memo
+  2) display di tutti i memo disponibili 
+  3) ricerca di un memo attraverso la parola chiave
+  */
+
 export class MenuComponent implements OnInit {
 
   constructor(
@@ -15,14 +24,6 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  /*
-  cliccando le 3 opzioni offerte dal menù mi sposto sulle diverse viste
-  1) creazione di un nuovo memo
-  2) display di tutti i memo disponibili 
-  3) ricerca di un memo attraverso la parola chiave
-  */
-
-
    onClick = (route : string) => this.router.navigateByUrl(route)
 
 }

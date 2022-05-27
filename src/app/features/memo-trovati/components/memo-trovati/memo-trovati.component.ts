@@ -8,6 +8,14 @@ import { Todo } from 'src/app/shared/models/todo-model';
   templateUrl: './memo-trovati.component.html',
   styleUrls: ['./memo-trovati.component.css']
 })
+
+/*
+Si approda a questo componente dopo aver svolto una ricerca per keyword degli elementi della to-do list
+sulla vista supportata dal componente cerca-memo.
+Questo componente supporta la vista che mostra tutti gli elementi della to-do list che risultano dalla ricerca tramite keyword.
+Questo componente utulizza un servizio di tipo get-by-keyword implmentato in core/todo.service.ts.
+*/
+
 export class MemoTrovatiComponent implements OnInit {
 
   keyword: string = ''

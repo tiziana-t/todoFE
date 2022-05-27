@@ -9,6 +9,16 @@ import { Todo } from 'src/app/shared/models/todo-model';
   styleUrls: ['./full-list-container.component.css']
 })
 
+  /*
+  Componente che supporta la vista per la visualizzazione della lista completa di elementi della To-Do list 
+  e per la loro modifica e eliminazione.
+  Vista raggiunta dalla vista di menù.
+  Utilizza il servizio di get-all implementato in core/todo.service.ts per mostrare tutti gli elementi.
+  Utilizza il servizio di delete implementato in core/todo.service.ts per eliminare l'elemento selezionato.
+  Demanda la gestione della modifica a un altro componente (form-modifica) puntando alla sua rotta.
+
+  */
+
 export class FullListContainerComponent implements OnInit {
 
   listaMemo : Todo[] = []

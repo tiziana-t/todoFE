@@ -7,6 +7,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './cerca-memo.component.html',
   styleUrls: ['./cerca-memo.component.css']
 })
+
+/* 
+Componente che supporta una vista con una casella per la ricerca degli elementi della to-do list attraverso keyword.
+Si approda a questa vista dalla vista di menù.
+Da questa vista si punta poi al componete memo-trovati a cui si demanda la funzionalità di ricerca tramite keyword.
+
+*/
+
 export class CercaMemoComponent implements OnInit {
 
   keyword: string = ''
