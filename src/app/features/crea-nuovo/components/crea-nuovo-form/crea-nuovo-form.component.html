@@ -22,7 +22,8 @@
 
     <div>
         <input type="submit" value="SAVE">
-        <small class="error-msg" *ngIf="incorrectForm">compila tutti i campi obbligatori</small>
     </div>
+
+    <p *ngIf="incorrectForm"> Per favore, compila tutti i campi obbligatori</p>
 
 </form>

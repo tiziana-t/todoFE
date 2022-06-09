@@ -19,7 +19,9 @@ import { TodoPartial } from 'src/app/shared/models/todo-partial-model';
 
 export class CreaNuovoFormComponent implements OnInit {
 
-  newTodo? : Todo; 
+  newTodo? : Todo
+  incorrectForm: boolean = false
+  defaultOdierna: Date= new Date
 
   constructor(
     private todoService : TodoService
@@ -39,14 +41,38 @@ export class CreaNuovoFormComponent implements OnInit {
       dueTo: newTodoForm.value.campoDueTo //da implementare il fatto che se questo campo è null gli viene associato un valore di default configurabile
     }
 
-    this.todoService.createMemo(todoPartial).subscribe(
-      result => {
-        console.log(result)
-      },
-      error => {
-        console.log(error)
-      }
-    )
+    if(!todoPartial.state){
+      todoPartial.state = "TODO"
+    }
+
+    if(!todoPartial.createdAt){
+      todoPartial.createdAt = this.defaultOdierna
+    }
+
+    if(!todoPartial.dueTo){
+      todoPartial.dueTo = todoPartial.createdAt //get giorno + 10
+    }
+
+    console.log(todoPartial)
+
+
+    if(newTodoForm.value.campoTesto){ // il form risulta invalido se non viene compilato il campo testo
+      console.log("form ok")
+      this.todoService.createMemo(todoPartial).subscribe(
+        result => {
+          console.log(result)
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    }
+    else{
+      console.log("form sbagliato")
+      this.incorrectForm = true
+    }
+
+
 
   }
 
