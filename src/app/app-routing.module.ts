@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes : Routes = [
-  { path: '', redirectTo: '/menu', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: 'login', loadChildren: () =>(import('./features/login/login.module').then(m=>m.LoginModule))}
   { path: 'menu', loadChildren: () => import('./features/menu/menu.module').then(m => m.MenuModule)},
   { path: 'getAll', loadChildren: () => import('./features/full-list/full-list.module').then(m => m.FullListModule)},
   { path: 'creaNuovo', loadChildren:() => import('./features/crea-nuovo/crea-nuovo.module').then(m =>m.CreaNuovoModule)},
