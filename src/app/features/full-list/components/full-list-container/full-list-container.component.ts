@@ -51,10 +51,16 @@ export class FullListContainerComponent implements OnInit {
   memos = this.showList()
 
   eliminaSelectDetailHandler(memo: Todo): void {
+    //const url = `/getAll`
     console.log(memo.id)
     this.todoService.deleteMemo(memo.id).subscribe(
       result => {
         console.log("record eliminato")
+        //this.router.navigateByUrl(url)
+        let currentUrl = this.router.url;
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = 'reload';
+        this.router.navigate([currentUrl]);
       },
       error => {
         console.log(error)
@@ -67,5 +73,6 @@ export class FullListContainerComponent implements OnInit {
     console.log(memo.id)
   }
 
-  
+  onClick = (route : string) => this.router.navigateByUrl(route)
+
   }

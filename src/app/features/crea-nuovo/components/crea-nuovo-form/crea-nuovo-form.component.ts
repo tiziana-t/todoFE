@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TodoService } from 'src/app/core/services/todo.service';
 import { Todo } from 'src/app/shared/models/todo-model';
 import { TodoPartial } from 'src/app/shared/models/todo-partial-model';
@@ -24,7 +25,8 @@ export class CreaNuovoFormComponent implements OnInit {
   defaultOdierna: Date= new Date
 
   constructor(
-    private todoService : TodoService
+    private todoService : TodoService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -58,9 +60,12 @@ export class CreaNuovoFormComponent implements OnInit {
 
     if(newTodoForm.value.campoTesto){ // il form risulta invalido se non viene compilato il campo testo
       console.log("form ok")
+      const url =  `/getAll`
       this.todoService.createMemo(todoPartial).subscribe(
         result => {
           console.log(result)
+          this.router.navigateByUrl(url)
+
         },
         error => {
           console.log(error)
