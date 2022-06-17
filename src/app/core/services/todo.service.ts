@@ -16,12 +16,12 @@ export class TodoService {
   //*************GET*************
 
   public getMemo() : Observable<Todo[]>{
-    const url = environment.baseUrl + '/getAll/';
+    const url = environment.baseUrl + '/todo';
     return this.http.get<Todo[]>(url);
   }
 
   public getByKeyword(keyword: string) : Observable<Todo[]> {
-    const url = environment.baseUrl + '/memoTrovati/' + keyword;
+    const url = environment.baseUrl + '/todo/' + keyword;
     console.log(url)
     return this.http.get<Todo[]>(url);
   }
@@ -30,7 +30,7 @@ export class TodoService {
   //*************POST*************
 
   public createMemo(todoPartial : TodoPartial) : Observable<number> {
-    const url = environment.baseUrl + '/creaNuovo';
+    const url = environment.baseUrl + '/todo';
     return this.http.post<number>(url, todoPartial)
   }
 
@@ -38,7 +38,7 @@ export class TodoService {
   //*************DELETE*************
   
   public deleteMemo(id: number) {
-    const url = environment.baseUrl + '/getAll/' + id;
+    const url = environment.baseUrl + '/todo/' + id;
     console.log(url)
     return this.http.delete<number>(url)
   }
@@ -47,7 +47,7 @@ export class TodoService {
   //*************PUT*************
   
   public updateMemo(id: number, todoPartial :TodoPartial) : Observable<Todo> {
-    const url = environment.baseUrl + '/modifica/' + id;
+    const url = environment.baseUrl + '/todo/' + id;
     return this.http.put<Todo>(url, todoPartial)
   }
   
