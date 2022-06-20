@@ -24,6 +24,8 @@ export class FormModificaComponent implements OnInit {
 
   updatedTodo? : Todo;
   id : number = 0;
+  defaultOdierna: Date= new Date
+  day : number = 0;
 
   constructor(
     private todoService : TodoService,
@@ -48,6 +50,29 @@ export class FormModificaComponent implements OnInit {
       createdAt: updatedTodoForm.value.campoCreatedAt,
       dueTo: updatedTodoForm.value.campoDueTo
     }
+
+    if(!todoPartial.state){
+      todoPartial.state = "TODO"
+    }
+
+    if(!todoPartial.createdAt){
+      todoPartial.createdAt = this.defaultOdierna
+    }
+
+    if(!todoPartial.dueTo){
+      this.day = todoPartial.createdAt.getDate()
+      console.log("prima di incremento")
+      console.log(this.day)
+      this.day += 10;
+      console.log("dopo incremento")
+      console.log(this.day)
+      console.log(todoPartial.createdAt.setDate(this.day))
+      //todoPartial.dueTo = todoPartial.createdAt.setDate(this.day)
+      todoPartial.dueTo = todoPartial.createdAt;
+    }
+
+    console.log(todoPartial)
+
     
     this.todoService.updateMemo(this.id, todoPartial).subscribe(
       result => {

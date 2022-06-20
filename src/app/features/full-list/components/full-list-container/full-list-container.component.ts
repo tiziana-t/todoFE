@@ -36,7 +36,6 @@ export class FullListContainerComponent implements OnInit {
       result => {
         if (result) {
           result.forEach(element => { this.listaMemo.push(element)});
-          console.log(result)
           }
             
          else console.log('errore')

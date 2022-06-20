@@ -23,6 +23,7 @@ export class CreaNuovoFormComponent implements OnInit {
   newTodo? : Todo
   incorrectForm: boolean = false
   defaultOdierna: Date= new Date
+  day: number = 0;
 
   constructor(
     private todoService : TodoService,
@@ -49,10 +50,22 @@ export class CreaNuovoFormComponent implements OnInit {
 
     if(!todoPartial.createdAt){
       todoPartial.createdAt = this.defaultOdierna
+      console.log(todoPartial.createdAt);
+      
     }
 
     if(!todoPartial.dueTo){
-      todoPartial.dueTo = todoPartial.createdAt //get giorno + 10
+      let dataCopy = new Date(todoPartial.createdAt.valueOf())
+      console.log(todoPartial.createdAt);
+      console.log(dataCopy);
+      
+      
+      dataCopy.setDate(dataCopy.getDate()+10)
+      console.log(dataCopy);
+      console.log(todoPartial.createdAt);
+      
+      
+      todoPartial.dueTo = dataCopy
     }
 
     console.log(todoPartial)
